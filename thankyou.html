@@ -1,0 +1,75 @@
+<html>
+<head>
+<script>
+
+    // Called on body's `onload` event
+    function init() {
+
+    	document.write("<h1>Thank you Registration</h1>");
+        // Retrieving the text input's value which was stored into localStorage
+        //display first name
+        var firstname = localStorage.getItem("fname");
+        document.write("First Name = "+firstname);
+        document.write("<br>");
+
+        //display Last name
+        var lastname = localStorage.getItem("lname");
+		document.write("Last Name = "+lastname);
+		document.write("<br>");
+		//display Department
+        var department = localStorage.getItem("dept");
+		document.write("Department = " +department);
+		document.write("<br>");
+		//display dob
+        var dateofbirth = localStorage.getItem("dob");
+		document.write("Birth date = " +dateofbirth);
+		document.write("<br>");
+		//display phonenumber
+        var phonenumber = localStorage.getItem("number");
+		document.write("Phone Number = " +phonenumber);
+		document.write("<br>");
+		//display address
+        var address = localStorage.getItem("address");
+		document.write("Address = " +address);
+		document.write("<br>");
+
+
+		var d = new Date(); 
+        
+        var date = d.getDate();
+        document.write("Today's Date = " + date);
+        document.write("<br>");
+
+        var month = d.getMonth();
+        document.write("Current	 month = " + month);
+    	document.write("<br>");
+
+        var fullyear = d.getFullYear();
+        document.write("Current Year = " + fullyear);
+        document.write("<br>");
+
+
+        var day = d.getDay();
+        document.write("Today's day = " + day);
+        document.write("<br>");
+
+        var hours = d.getHours();
+        document.write("Current Hour = " + hours);
+        document.write("<br>");
+		
+		var minutes = d.getMinutes();
+        document.write("Current Minutes = " + minutes);
+        document.write("<br>");
+
+    }
+
+</script>
+</head>    
+
+<body onload="init();">
+
+	 
+
+</body>
+
+</html>

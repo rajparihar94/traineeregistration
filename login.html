@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+
+<head>
+	<title>Trainee Login</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<style type="text/css">
+
+		
+
+		button {
+					  background-color: #1797C0;;
+					  color: white;
+					  padding: 14px 20px;
+					  margin: 8px 0;
+					  border: none;
+					  cursor: pointer;
+					  width: 100%;
+					}
+
+		.signupbtn {
+				  width: auto;
+				  background-color: #4CAF50;;
+				}
+	
+	</style>
+</head>
+
+<body>
+	
+	<form id="loginForm" onsubmit="loginsucess();">
+	<div class="imgcontainer">
+    <img src="logo.svg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input id="user_name" type="text" class="input" placeholder="Enter Username" name="uname"  required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" class="input"placeholder="Enter Password" name="psw" id="password" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="signupbtn" onclick="location.href = 'signup.html'">SignUp</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+
+  <div class="container">
+    <ol>
+  <li>Use the login user name "test1"</li>
+  <li>Use the correct password "test12345678".</li>
+  <li>To navigate to the next page password should be more than 8 charactors.</li>
+</ol>
+
+<ul>
+  <li>Enter Name on the signup page.</li>
+  <li>Recmmended to enter "Business Analyst" in the department section.</li>
+  <li>Click on "Reset Buttin" to reset the data you entered before signing up.</li>
+</ul>
+  </div>
+</form>
+
+<script>
+
+function loginsucess() {
+            // Getting the value of Username
+            var uname = document.getElementById("user_name").value;
+            // Storing the value above into localStorage
+            localStorage.setItem("username", uname);
+
+            //same for all the next values
+            var Pass = document.getElementById("password").value;
+            localStorage.setItem("password", Pass);
+            var pass_length = Pass.length;
+            localStorage.setItem("password_length", pass_length);
+
+            if (pass_length <= '7') {
+              alert("Password should me more than 8 characters");
+            } else {
+              alert("Password is good to go.");
+              document.getElementById("loginForm").action = "loginsucess.html"; 
+            }
+            
+            return true;    
+        }
+
+
+
+
+            </script>
+
+</body>

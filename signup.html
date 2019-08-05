@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+
+<head>
+  <title>Trainee Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <style type="text/css">
+
+    
+
+    button {
+            background-color: #1797C0;;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+          }
+
+  
+  </style>
+
+
+</head>
+
+<body>
+  
+
+
+<form id="regForm" onsubmit="getValues();" action="thankyou.html">
+    <div class="imgcontainer">
+    <img src="logo.svg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="fname"><b>First Name</b></label>
+    <input id="fname" type="text" class="input" placeholder="Enter First Name" name="fname" required>
+
+    <label for="lname"><b>Last Name</b></label>
+    <input id="lname" type="text" class="input" placeholder="Enter Last Name" name="lname" required>
+
+    <label for="dept"><b>Department</b></label>
+    <input id="dept" type="text" class="input"placeholder="Enter Department" name="dept" required>
+
+    <label for="dob"><b>Date of Birth</b></label>
+    <input id="dob" type="Date" class="input"placeholder="Date of Birth" name="dob" required>
+
+    <label for="number"><b>Phone Number</b></label>
+    <input id="number" type="Phone" class="input"placeholder="Enter Pone Number" name="number" required>   
+
+
+    <label for="address"><b>Address</b></label>
+    <input id="address" type="text" class="input"placeholder="Enter Address" name="address" required>
+     
+    <button type="submit">Register</button>   
+    <button type="button" value="Reset" onclick="resetForm()">Reset</button>
+  </div>
+  </form>
+
+
+  <script>
+
+
+function resetForm() {
+  document.getElementById("regForm").reset();
+}
+
+
+
+// Called on form's `getValues`
+        function getValues() {
+            // Getting the value of your first name
+            var firstname = document.getElementById("fname").value;
+            // Storing the value above into localStorage
+            localStorage.setItem("fname", firstname);
+
+            //same for all the next values
+            var lastname = document.getElementById("lname").value;
+            localStorage.setItem("lname", lastname);
+            var department = document.getElementById("dept").value;
+            localStorage.setItem("dept", department);
+            var dateofbirth = document.getElementById("dob").value;
+            localStorage.setItem("dob", dateofbirth);
+            var phonenumber = document.getElementById("number").value;
+            localStorage.setItem("number", phonenumber);
+            var address = document.getElementById("address").value;
+            localStorage.setItem("address", address);
+
+            
+            
+            
+            return true;
+        }
+
+</script>
+
+</body>

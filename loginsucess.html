@@ -1,0 +1,49 @@
+<html>
+<head>
+<script>
+
+    // Called on body's `onload` event
+    function init() {
+
+    	document.write("<h1>Thank you Registration</h1>");
+        // Retrieving the text input's value which was stored into localStorage
+        //display User name
+        var username = localStorage.getItem("username");
+        document.write("Username = "+ username);
+        document.write("<br>");
+
+        //display password
+        var password = localStorage.getItem("password");
+		document.write(" Password = "+password);
+		document.write("<br>");
+
+        var password_len = localStorage.getItem("password_length");
+        document.write(" Password length is :- = "+password_len);
+        document.write("<br>");
+
+        if (username == "test1" && password == "test12345678") {
+
+            document.write(" Username and password Correct");
+            document.write("<h3> login sucess</h3>")
+            document.write("<br>");    
+        }
+
+        else {
+            document.write(" Username and password Incorrect");
+            document.write("<h3> login failed</h3>")
+            document.write(" Username should be [test1] and Password should be [test12345678]");
+            document.write("<br>");  
+        }
+		
+
+    }
+
+</script>
+</head>    
+
+<body onload="init();">
+
+	 
+</body>
+
+</html>
